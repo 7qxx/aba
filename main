@@ -10,7 +10,7 @@ local Gold = Player.PlayerGui.ScreenGui.TextLabel.Text
 local Level = Player.PlayerGui.ScreenGui.TextLabel2.Text
 _G.Collected = 0
 
-getgenv().WaitFor = 75 -- seconds til payout
+getgenv().WaitFor = 90 -- seconds til payout
 _G.Webhook = "https://discord.com/api/webhooks/1217287282172887141/FWbsWXZqnR1w4W7WbNQrMnCni6_7dyrEMLI4jZnV19UmOBPmJB1Jrlbpf5nrbZiESXXY"
 
 function Log(LogItem)
