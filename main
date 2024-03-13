@@ -1,6 +1,6 @@
 
 print("success")
-task.wait(1) -- STOP CRASHINGGGGGGG
+task.wait(1.6) -- STOP CRASHINGGGGGGG
 local AFKWorld = 5411459567  -- AFK WORLD
 
 local Player = game.Players.LocalPlayer
@@ -18,6 +18,7 @@ function Log(LogItem)
 end 
 
 local function ServerHop()
+    queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/7qxx/aba/main/main", true))()')
     loadstring(game:HttpGet("https://raw.githubusercontent.com/RZiln/GayBloxScripts/master/ABA/ServerHop.lua", true))()
 end
 
@@ -40,10 +41,12 @@ else
     repeat task.wait() print(CheckPayout()) until CheckPayout() > getgenv().WaitFor
     Log("collected a payout, hopping, current gold: " .. Gold .. " lvl: " .. Level .. "")
     task.wait(1.5) -- database issues and such
+    queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/7qxx/aba/main/main", true))()')
     ServerHop()
     else
         print("ass")
         Log("got a bad server hopping")
+        queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/7qxx/aba/main/main", true))()')
         ServerHop()
     end
 end
