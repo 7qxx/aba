@@ -8,7 +8,7 @@ local TeleportService = game:GetService("TeleportService")
 local HttpService = game:GetService("HttpService")
 local Gold = Player.PlayerGui.ScreenGui.TextLabel.Text
 local Level = Player.PlayerGui.ScreenGui.TextLabel2.Text
-local Collected = 0
+_G.Collected = 0
 local Start = tick()
 getgenv().WaitFor = 75 -- seconds til payout
 _G.Webhook = "https://discord.com/api/webhooks/1217259763612516462/rb72w1s6mk3T_cpg6rf2MCSJj5JyMu7h9MmOJhnbN0UDzwz70cULrvECwD7ABjnu95ao"
@@ -40,8 +40,8 @@ else
     if CheckPayout() <= getgenv().WaitFor then
     Log("found a good server in " .. game.JobId .. ", timer: " .. CheckPayout())
     repeat task.wait() print(CheckPayout()) until CheckPayout() > getgenv().WaitFor
-    Collected = Collected + 1
-    Log("collected a payout, hopping, current gold: " .. Gold .. " lvl: " .. Level .. " total payouts collected: " .. Collected .. " in " .. tick() - Start .. "s")
+    _G.Collected = _G.Collected + 1
+    Log("collected a payout, hopping, current gold: " .. Gold .. " lvl: " .. Level .. " total payouts collected: " .. _G.Collected .. " in " .. tick() - Start .. "s")
     task.wait(3) -- database issues and such
     queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/7qxx/aba/main/main", true))()')
     ServerHop()
