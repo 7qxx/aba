@@ -43,7 +43,7 @@ else
     repeat task.wait() print(CheckPayout()) until CheckPayout() > getgenv().WaitFor
     Collected = Collected + 1
     Log("collected a payout, hopping, current gold: " .. Gold .. " lvl: " .. Level .. " total payouts collected: " .. Collected .. " in " .. os.date("%Y-%m-%d %H:%M:%S") .. )
-    task.wait(1.5) -- database issues and such
+    task.wait(3) -- database issues and such
     queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/7qxx/aba/main/main", true))()')
     ServerHop()
     else
