@@ -1,7 +1,8 @@
+
 print("success")
 print(os.date("%Y-%m-%d %H:%M:%S"))
 task.wait(1.6) -- STOP CRASHINGGGGGGG
-local AfkWorld = 5411459567  -- AFK WORLD
+local AFKWorld = 5411459567  -- AFK WORLD
 
 local Player = game.Players.LocalPlayer
 local TeleportService = game:GetService("TeleportService")
@@ -14,8 +15,8 @@ getgenv().WaitFor = 75 -- seconds til payout
 _G.Webhook = "https://discord.com/api/webhooks/1217259763612516462/rb72w1s6mk3T_cpg6rf2MCSJj5JyMu7h9MmOJhnbN0UDzwz70cULrvECwD7ABjnu95ao"
 
 function Log(LogItem)
-	local Data = { ["content"] = "", ["embeds"] = {{ ["title"] = "__**Log**__", ["description"] = LogItem, ["type"] = "rich", ["color"] = tonumber(0xffffff), ["fields"] = { { ["name"] = "Account Name", ["value"] = Player.Name, ["inline"] = true },  } }} }
-	local Response = request({ Url = _G.Webhook, Method = 'POST', Headers = { ['Content-Type'] = 'application/json' }, Body = game:GetService('HttpService'):JSONEncode(Data) });       
+	local data = { ["content"] = "", ["embeds"] = {{ ["title"] = "__**Log**__", ["description"] = LogItem, ["type"] = "rich", ["color"] = tonumber(0xffffff), ["fields"] = { { ["name"] = "Account Name", ["value"] = Player.Name, ["inline"] = true },  } }} }
+	local response = request( { Url = _G.Webhook, Method = 'POST', Headers = { ['Content-Type'] = 'application/json' }, Body = game:GetService('HttpService'):JSONEncode(data) } );       
 end 
 
 local function ServerHop()
@@ -28,23 +29,23 @@ local function CheckPayout()
     return Time
 end
 
-repeat wait() until game:IsLoaded()
+repeat wait() until game:IsLoaded() 
 print("a")
-if game.PlaceId ~= AfkWorld then 
+if game.PlaceId ~= AFKWorld then 
     print("woah.")
-    Log("wasn't in afk world..?")
+    Log(WebhookUrl, "wasnt in afk world..?")
     TeleportService:Teleport(AfkWorld, Player)
 else
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/7qxx/aba/main/main"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/7qxx/aba/main/main"))
     print(CheckPayout())
     if CheckPayout() <= getgenv().WaitFor then
-        Log("found a good server in " .. game.JobId .. ", timer: " .. CheckPayout())
-        repeat task.wait() print(CheckPayout()) until CheckPayout() > getgenv().WaitFor
-        Collected = Collected + 1
-        Log("collected a payout, hopping, current gold: " .. Gold .. " lvl: " .. Level .. ", total payouts collected: " .. Collected .. " in " .. os.date("%Y-%m-%d %H:%M:%S"))
-        task.wait(3) -- database issues and such
-        queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/7qxx/aba/main/main", true))()')
-        ServerHop()
+    Log("found a good server in " .. game.JobId .. ", timer: " .. CheckPayout())
+    repeat task.wait() print(CheckPayout()) until CheckPayout() > getgenv().WaitFor
+    Collected = Collected + 1
+    Log("collected a payout, hopping, current gold: " .. Gold .. " lvl: " .. Level .. " total payouts collected: " .. Collected .. " in " .. os.date("%Y-%m-%d %H:%M:%S") .. "")
+    task.wait(3) -- database issues and such
+    queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/7qxx/aba/main/main", true))()')
+    ServerHop()
     else
         print("ass")
         Log("got a bad server hopping")
