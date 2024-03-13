@@ -11,7 +11,7 @@ local Level = Player.PlayerGui.ScreenGui.TextLabel2.Text
 local Collected = 0
 
 getgenv().WaitFor = 75 -- seconds til payout
-_G.Webhook = "https://discord.com/api/webhooks/1217259763612516462/rb72w1s6mk3T_cpg6rf2MCSJj5JyMu7h9MmOJhnbN0UDzwz70cULrvECwD7ABjnu95ao"
+_G.Webhook = "https://discord.com/api/webhooks/1217287282172887141/FWbsWXZqnR1w4W7WbNQrMnCni6_7dyrEMLI4jZnV19UmOBPmJB1Jrlbpf5nrbZiESXXY"
 
 function Log(LogItem)
     local data = { ["content"] = "", ["embeds"] = {{ ["title"] = "__**Log**__", ["description"] = LogItem, ["type"] = "rich", ["color"] = tonumber(0xffffff), ["fields"] = { { ["name"] = "Account Name", ["value"] = Player.Name, ["inline"] = true },  } }} }
