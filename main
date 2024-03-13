@@ -34,7 +34,7 @@ if game.PlaceId ~= AFKWorld then
     Log(WebhookUrl, "wasnt in afk world..?")
     TeleportService:Teleport(AfkWorld, Player)
 else
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/7qxx/aba/main/main)
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/7qxx/aba/main/main"))
     print(CheckPayout())
     if CheckPayout() <= getgenv().WaitFor then
     Log("found a good server in " .. game.JobId .. ", timer: " .. CheckPayout())
