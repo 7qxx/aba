@@ -51,6 +51,7 @@ else
         queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/7qxx/aba/main/main", true))()')
         for i = 1,9e9 do  -- shit randomly breaks ?
         task.wait(5) 
+        print("hop >_<")
         ServerHop()
         end
     end
