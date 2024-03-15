@@ -10,8 +10,8 @@ local Gold = Player.PlayerGui.ScreenGui.TextLabel.Text
 local Level = Player.PlayerGui.ScreenGui.TextLabel2.Text
 _G.Collected = 0
 
-getgenv().WaitFor = 90 -- seconds til payout
-_G.Webhook = "https://discord.com/api/webhooks/1217259763612516462/rb72w1s6mk3T_cpg6rf2MCSJj5JyMu7h9MmOJhnbN0UDzwz70cULrvECwD7ABjnu95ao"
+getgenv().WaitFor = 75 -- seconds til payout
+_G.Webhook = "https://discord.com/api/webhooks/1217287282172887141/FWbsWXZqnR1w4W7WbNQrMnCni6_7dyrEMLI4jZnV19UmOBPmJB1Jrlbpf5nrbZiESXXY"
 
 function Log(LogItem)
     local data = { ["content"] = "", ["embeds"] = {{ ["title"] = "__**Log**__", ["description"] = LogItem, ["type"] = "rich", ["color"] = tonumber(0xffffff), ["fields"] = { { ["name"] = "Account Name", ["value"] = Player.Name, ["inline"] = true },  } }} }
@@ -19,6 +19,7 @@ function Log(LogItem)
 end 
 
 local function ServerHop()
+    queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/7qxx/aba/main/main", true))()')
     loadstring(game:HttpGet("https://raw.githubusercontent.com/RZiln/GayBloxScripts/master/ABA/ServerHop.lua", true))()
 end
 
