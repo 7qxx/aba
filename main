@@ -1,6 +1,6 @@
 print("success")
 print(os.date("%Y-%m-%d %H:%M:%S"))
-task.wait(3) -- STOP CRASHINGGGGGGG
+task.wait(2) -- STOP CRASHINGGGGGGG
 local AFKWorld = 5411459567  -- AFK WORLD
 
 local Player = game.Players.LocalPlayer
@@ -44,13 +44,12 @@ else
     _G.Collected = _G.Collected + 1
     Log("collected a payout, hopping, current gold: " .. Gold .. " lvl: " .. Level .. " total payouts collected: " .. _G.Collected .. " in " .. os.date("%Y-%m-%d %H:%M:%S") .. "")
     task.wait(3) -- database issues and such
-    queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/7qxx/aba/main/main", true))()')
     ServerHop()
     else
         print("ass")
         Log("got a bad server hopping")
         for i = 1,9e9 do  -- shit randomly breaks ?
-        task.wait(5) 
+        task.wait(1) 
         print("hop >_<")
         ServerHop()
         end
